@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>webcontainer</artifactId>
+        <groupId>io.communet.webcontainer</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>webcontainer-parent</artifactId>
+    <name>webcontainer-parent</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <apt-maven-plugin.version>1.0.8</apt-maven-plugin.version>
+
+        <spring-boot.version>1.5.3.RELEASE</spring-boot.version>
+        <!-- 不需要引用引bom，有spring-boot-dependencies 即可，否则造成包版本冲突
+        <spirng.platform-bom.version>Athens-SR5</spirng.platform-bom.version>
+        -->
+        <zkclient.version>0.1</zkclient.version>
+        <dubbo.version>2.5.3</dubbo.version>
+        <hikari.version>2.4.3</hikari.version>
+        <servlet-api.version>2.5</servlet-api.version>
+        <qrgen.version>1.3</qrgen.version>
+        <jodd.version>3.5.1</jodd.version>
+        <guava.version>21.0</guava.version>
+        <lombok.version>1.14.8</lombok.version>
+        <okhttp.version>3.5.0</okhttp.version>
+
+        <jcseg.version>1.9.9</jcseg.version>
+        <jieba.version>1.0.2</jieba.version>
+        <jsoup.version>1.7.3</jsoup.version>
+        <apache-commons-lang3.version>3.1</apache-commons-lang3.version>
+        <commons-collections.version>3.2.1</commons-collections.version>
+        <apache-commons-io.version>1.3.2</apache-commons-io.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <alibaba-fastjson.version>1.2.28</alibaba-fastjson.version>
+        <httpclient.version>4.5.2</httpclient.version>
+        <jackson.version>2.7.0</jackson.version>
+        <selenium-java.version>2.44.0</selenium-java.version>
+        <phantomjsdriver.version>1.2.0</phantomjsdriver.version>
+        <webCollector.version>2.32</webCollector.version>
+
+
+        <webmagic.version>0.5.3</webmagic.version>
+        <jcseg.version>1.9.9</jcseg.version>
+        <jieba.version>1.0.2</jieba.version>
+
+        <dozer.version>5.5.1</dozer.version>
+
+        <mybatis-spring.version>1.1.1</mybatis-spring.version>
+        <mysql-connector-java.version>5.1.38</mysql-connector-java.version>
+        <alibaba-druid.version>1.0.26</alibaba-druid.version>
+        <redis.version>2.8.2</redis.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.communet.webcontainer</groupId>
+                <artifactId>webcontainer-common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.communet.webcontainer</groupId>
+                <artifactId>webcontainer-common-mongo</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.communet.webcontainer</groupId>
+                <artifactId>webcontainer-persistence</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.communet.webcontainer</groupId>
+                <artifactId>webcontainer-persistence-mongo</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.communet.webcontainer</groupId>
+                <artifactId>webcontainer-utils</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.communet.webcontainer</groupId>
+                <artifactId>webcontainer-web</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.communet.webcontainer</groupId>
+                <artifactId>webcontainer-service-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.communet.webcontainer</groupId>
+                <artifactId>webcontainer-service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-redis</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>${spirng.platform-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.sgroschupf</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikari.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.terminus.lib</groupId>
+                <artifactId>terminus-pay</artifactId>
+                <version>${terminus.pay.version}</version>
+            </dependency>
+
+            <!-- utils -->
+            <dependency>
+                <groupId>org.jodd</groupId>
+                <artifactId>jodd-core</artifactId>
+                <version>${jodd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jodd</groupId>
+                <artifactId>jodd-lagarto</artifactId>
+                <version>${jodd.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.glxn</groupId>
+                <artifactId>qrgen</artifactId>
+                <version>${qrgen.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.edu.hfut.dmic.webcollector</groupId>
+                <artifactId>WebCollector</artifactId>
+                <version>${webCollector.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sf.dozer</groupId>
+                <artifactId>dozer</artifactId>
+                <version>${dozer.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${alibaba-druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${redis.version}</version>
+            </dependency>
+
+            <!-- alibaba utils -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba-fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache-commons-lang3.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

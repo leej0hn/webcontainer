@@ -1,0 +1,5 @@
+logging:
+  file: ${user.home}/logs/web-tomcat.log
+
+server.port: 8082
+
